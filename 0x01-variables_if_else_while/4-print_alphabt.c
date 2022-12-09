@@ -8,14 +8,16 @@
  * Return: Always 0 (Success)
  */
 
-int main (void)
+int main(void)
 {
 	int alphabet = 'a';
 
 	while (alphabet <= 'z')
 	{
-		char small = tolower(alphabet);
-		putchar(small);
+		if (alphabet != 'e' && alphabet != 'q')
+		{
+			putchar(tolower(alphabet));
+		}
 		alphabet++;
 	}
 	putchar('\n');
