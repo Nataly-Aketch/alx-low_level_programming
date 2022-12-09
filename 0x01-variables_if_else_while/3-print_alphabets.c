@@ -11,18 +11,18 @@
 int main(void)
 {
 	int alphabet = 'a';
+	int alpha = 'A';
 
 	while (alphabet <= 'z')
 	{
 		putchar(tolower(alphabet));
 		alphabet++;
 	}
-	int alpha_bet = 'A';
 
-	while (alpha_bet <= 'Z')
+	while (alpha <= 'Z')
 	{
-		putchar(toupper(alpha_bet));
-		alpha_bet++;
+		putchar(toupper(alpha));
+		alpha++;
 	}
 	putchar('\n');
 	return (0);
