@@ -10,16 +10,17 @@
 
 int main(void)
 {
-	int alphabet = 48;
 	int numero = 0;
+	int alphabet = 'a';
 
-	while ((numero < 10) && (alphabet < 58))
+	while (numero < 10)
 	{
 		putchar((numero++) + '0');
-		
-		char small = tolower(alphabet);
 
-		putchar(small);
+	}
+	while (alphabet <= 'f')
+	{
+		putchar(tolower(alphabet));
 		alphabet++;
 	}
 	putchar('\n');
