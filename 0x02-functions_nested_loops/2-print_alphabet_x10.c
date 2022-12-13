@@ -1,13 +1,26 @@
 #include "main.h"
 
 /**
- * main -checks code
+ * print_alphabet_x10 - prints the alphabet 10
+ * times using _putchar.
  *
  * Return: Always 0.
  */
 
-int main(void)
+void print_alphabet_x10(void)
 {
-	print_alphabet_x10();
-	return (0);
+	char n = 0;
+
+	while (n < 10)
+	{
+		char l = 'a';
+
+		while (l <= 'z')
+		{
+			_putchar(l);
+			l++;
+		}
+		_putchar('\n');
+		n++;
+	}
 }
