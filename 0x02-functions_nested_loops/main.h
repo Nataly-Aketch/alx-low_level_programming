@@ -10,3 +10,4 @@ int add(int, int);
 void print_to_98(int n);
 void times_table(void);
 int _isalpha(int c);
+void jack_bauer(void);
