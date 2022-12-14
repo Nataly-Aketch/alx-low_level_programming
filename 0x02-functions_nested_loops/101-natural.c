@@ -2,9 +2,9 @@
 
 /**
  * sums - adds positive numbers
- * main - uses sums function to add numbers
- * less than 1024 that are divisible by 3 and 5.
- * Return: always 0
+ * @n: integer to be checked
+ *
+ * Return: add, sum of 0 and n
  */
 int sums(int n)
 {
@@ -18,11 +18,18 @@ int sums(int n)
 			add += i;
 		}
 	}
-	return add;
+	return (add);
 }
+/**
+ * main - ads numbers less than 1024
+ * that are divisible by 3 and 5
+ * Return: Always 0
+ */
 int main(void)
 {
 	int j = 1024;
 	int result = sums(j);
+
 	printf("%d\n", result);
+	return (0);
 }
