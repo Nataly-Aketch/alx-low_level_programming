@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
  * print_diagonal - draws a diagonal line
  * @n: number of times
@@ -16,20 +16,13 @@ void print_diagonal(int n)
 			for (j = 1; j <= n; j++)
 			{
 				if (j == i)
-					putchar('\\');
+					_putchar('\\');
 				else if (j < i)
-					putchar(' ');
+					_putchar(' ');
 			}
+			_putchar('\n');
 		}
-		putchar('\n');
 	}
 	else
-		putchar('\n');
-}
-int main(void)
-{
-	print_diagonal(0);
-	print_diagonal(-4);
-	print_diagonal(2);
-	print_diagonal(10);
+		_putchar('\n');
 }
