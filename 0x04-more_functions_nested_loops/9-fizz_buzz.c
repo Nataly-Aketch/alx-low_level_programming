@@ -1,13 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - prints fizz and buzz for multiples of
- * 3 and 5 respectively and FizzBuzz for multiples
- * of both
- * Return: 0 success
+ * fizzbuzz - checks for multiples of 3, 5 and 15
+ * and prints Fizz, Buzz, FizzBuzz respectively.
  */
 
-int main(void)
+void fizzbuzz(void)
 {
 	int i = 1;
 
@@ -38,4 +36,14 @@ int main(void)
 		}
 	}
 	printf("\n");
+}
+/**
+ * main - checks function
+ * Return: o success
+ */
+int main(void)
+{
+	fizzbuzz();
+
+	return (0);
 }
