@@ -2,13 +2,14 @@
 
 /**
  * fibonacci - prints fibonacci series
+ * @n: number of times
  */
 
 void fibonacci(int n)
 {
 	long a = 1, i = 1, j = 2, k;
 
-	while (a < n)
+	while (a <= n)
 	{
 		if (i != 1)
 			printf(", ");
@@ -25,7 +26,7 @@ void fibonacci(int n)
  */
 int main(void)
 {
-	fibonacci(49);
+	fibonacci(50);
 	printf("\n");
 	return (0);
 }
