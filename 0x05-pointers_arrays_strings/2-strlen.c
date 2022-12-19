@@ -2,28 +2,19 @@
 #include <stdio.h>
 
 /**
- * strlen - function that returns length of a string
+ * _strlen - function that returns length of a string
  * @s: string
+ * Return: count i.e. length of string literal
  */
 
 int _strlen(char *s)
 {
-	int i, count = 0;
-	char x[];
-	s = x;
+	int count = 0;
 
-	while (x[i] != '\0')
+	while (*s != '\0')
 	{
 		count++;
-		i++;
+		s++;
 	}
-	return count++;
-}
-int main()
-{
-	char *str;
-	int len;
-
-	str = "My first strlen!";
-	printf("%d\n", len);
+	return (count);
 }
