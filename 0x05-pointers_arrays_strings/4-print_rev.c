@@ -12,7 +12,7 @@ void print_rev(char *s)
 
 	while (s[i] != '\0')
 		i++;
-	while (j >= s[m])
+	while (j >= s[i])
 	{
 		_putchar(s[j]);
 		j++;
