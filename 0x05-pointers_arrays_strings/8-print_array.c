@@ -19,8 +19,3 @@ void print_array(int *a, int n)
 	}
 	printf("\n");
 }
-int main()
-{
-	int arr[5] = {1, 2, 3, 4, 5};
-	print_array(arr, 5);
-}
