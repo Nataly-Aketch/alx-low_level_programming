@@ -9,26 +9,24 @@
 
 void puts_half(char *str)
 {
-	int i = 0;
-	int len = strlen(str);
-	int mid = len / 2;
-	int mid2 = len - mid;
-	int j = mid2 + 1;
+	int m;
+	int n;
 
-	if (str[i] != '\n')
+	m = 0;
+	while (str[m] != '\0')
 	{
-		while (j > mid)
-		{
-			putchar(str[j]);
-			j++;
-		}
+		m++;
 	}
-	putchar('\n');
-}
-int main()
-{
-	char *str;
-	str = "012345678";
-	puts_half(str);
-	return 0;
+	n = 0;
+	n = m / 2;
+	if (m % 2 != 0)
+	{
+		n++;
+	}
+	while (str[n] != '\0')
+	{
+		_putchar(*(str + n));
+		n++;
+	}
+	_putchar('\n');
 }
