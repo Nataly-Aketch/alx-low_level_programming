@@ -9,15 +9,18 @@
 
 void puts_half(char *str)
 {
-	int i = 0, j;
+	int i = 0;
 	int len = strlen(str);
 	int mid = len / 2;
+	int mid2 = len - mid;
+	int j = mid2 + 1;
 
 	if (str[i] != '\n')
 	{
-		for (j = mid - 1; j > mid; j--)
+		while (j > mid)
 		{
 			putchar(str[j]);
+			j++;
 		}
 	}
 	putchar('\n');
