@@ -9,7 +9,7 @@
  */
 int password_gen(int len)
 {
-	char list[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+=-`~,./';[]\"\\{}:><?";
+	char list[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	int i;
 
 	srand(time(NULL));
