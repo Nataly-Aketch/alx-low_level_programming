@@ -18,6 +18,7 @@ int password_gen(int len)
 		printf("%c", list[rand() % (sizeof(list) - 1)]);
 	}
 	printf("\n");
+	return (0);
 }
 /**
  *main - checks code
