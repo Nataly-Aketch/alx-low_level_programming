@@ -8,21 +8,17 @@
  */
 void print_rev(char *s)
 {
-	int j = strlen(s);
-	int i;
-	char *start, *end, temp;
-	start = s;
-	end = s + j - 1;
-	for (i = 0; i < j /2; i++)
+	int i = 0, j = strlen(s), k = j - 1;
+	char temp;
+
+	for (i = 0; i < k; i++)
 	{
-		temp = *end;
-		*end = *start;
-		*start = temp;
-		start++;
-		end--;
+		temp = s[i];
+		s[i] = s[k];
+		s[k] = temp;
+		k--;
 	}
-	putchar(*s++);
-	putchar('\n');
+	printf("%s\n", s);
 }
 int main()
 {
