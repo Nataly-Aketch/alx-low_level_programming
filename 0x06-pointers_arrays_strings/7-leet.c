@@ -9,11 +9,11 @@
 
 char *leet(char *s)
 {
-	int i, j;
+	int i = 0, j;
 	char str[] = "aAeEoOtTlL";
 	char str1[] = "4433007711";
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (; s[i] != '\0'; i++)
 	{
 		for (j = 0; j <= 9; j++)
 		{
