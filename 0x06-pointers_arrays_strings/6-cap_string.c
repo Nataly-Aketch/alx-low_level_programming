@@ -3,11 +3,11 @@
 
 /**
  * cap_string - capitalizes string
- * @a: string
+ * @s: string
  * Return: pointer to a
  */
 
-char *cap_string(char *a)
+char *cap_string(char *s)
 {
 	int i;
 	int j;
