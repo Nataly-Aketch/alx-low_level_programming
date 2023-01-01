@@ -10,18 +10,30 @@
 char *leet(char *s)
 {
 	int i = 0, j;
-	char str[] = "aAeEoOtTlL";
-	char str1[] = "4433007711";
+	char str[] = "aeotl";
+	int str1[] = {4,3,0,7,1};
+	char str2[] = "AEOTL";
 
-	for (; s[i] != '\0'; i++)
+	while ( s[i] != '\0')
 	{
-		for (j = 0; j <= 9; j++)
+		for (j = 0; j <= 5; j++)
 		{
-			if (str[j] == s[i])
+			if (str[j] == s[i] || str2[j] == s[i])
 			{
 				str[i] = str1[j];
 			}
 		}
+		i++;
 	}
 	return (s);
+}
+int main(void)
+{
+	    char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
+	        char *p;
+
+		    p = leet(s);
+		        printf("%s", p);
+			    printf("%s", s);
+			        return (0);
 }
