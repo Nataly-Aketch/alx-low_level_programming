@@ -1,13 +1,18 @@
 #include <stdio.h>
 #include <string.h>
+int count(char *s)
+{
+	int count = 0;
+	while (*s)
+	{
+		count++;
+		s++;
+	}
+	return count;
+}
 int main()
 {
-	char *s = "lonely joh";
-	int j = strlen(s) - 1;
-	while (j > 0)
-	{
-		putchar(s[j--]);
-	}
-	printf("\n");
-
+	char *str = "Love";
+	int len = count(str);
+	printf("%d\n", len);
 }
