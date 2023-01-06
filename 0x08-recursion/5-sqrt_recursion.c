@@ -1,6 +1,22 @@
 #include "main.h"
 #include <stdio.h>
-
+/**
+ * _sqr - returns square root of n
+ * @n: i squared
+ * @i: square root of n
+ * Return: i is n is a natural square root, -1
+ * if not
+ */
+int _sqr(int n, int i)
+{
+	if (n == 0)
+		return (0);
+	if ((i * i) == n)
+		return (i);
+	if ((i * i) > n)
+		return (-1);
+	return (_sqr(n, i + 1));
+}
 /**
  * _sqrt_recursion - returns natural square root of a number
  * @n: number
@@ -8,26 +24,5 @@
  */
 int _sqrt_recursion(int n)
 {
-	if (n)
-		return (n / _sqrt_recursion(n - 1));
-	else
-		return -1;
-}
-int main(void)
-{
-	    int r;
-
-	        r = _sqrt_recursion(1);
-		    printf("%d\n", r);
-		        r = _sqrt_recursion(1024);
-			    printf("%d\n", r);
-			        r = _sqrt_recursion(16);
-				    printf("%d\n", r);
-				        r = _sqrt_recursion(17);
-					    printf("%d\n", r);
-					        r = _sqrt_recursion(25);
-						    printf("%d\n", r);
-						        r = _sqrt_recursion(-1);
-							    printf("%d\n", r);
-							        return (0);
+	return (_sqr(n, 1));
 }
