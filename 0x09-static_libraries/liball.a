@@ -139,12 +139,11 @@ char *_strncat(char *dest, char *src, int n)
 	return (dest);
 }
 
-100-atoi.c/     0           0     0     644     60        `
+100-atoi.c/     0           0     0     644     57        `
 #include "main.h"
 #include <stdio.h>
-int _atoi(char *s)
-{
-}
+int _atoi(char *s);
+
 2-strchr.c/     0           0     0     644     333       `
 #include "main.h"
 #include <stdio.h>
@@ -349,28 +348,44 @@ char *_strpbrk(char *s, char *accept)
 	return ('\0');
 }
 
-5-strstr.c/     0           0     0     644     388       `
-#include <stdio.h>
-#include "main.h"
-#include <string.h>
-
+5-strstr.c/     0           0     0     644     931       `
 /**
- * _strstr - locates a substring
- * @haystack: string to be searched in
- * @needle: substring to be searched for
- * Return: returns a pointer to first occurrence of needle
- */
+ *  * _strstr - a function that locates a substring
+ *   *
+ *    * @haystack: input string to search for matching
+ *     *            substrings
+ *      * @needle: subtring to search for
+ *       *
+ *        * Return: a pointer to the beginning
+ *         *         of the located substring or
+ *          *         NULL if substring is not found
+ *          */
+
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j, k;
+		/**
+		 * 	 * we initialize a helping variable
+		 * 	 	 * to assist in returning one of
+		 * 	 	 	 * our parameters pointers haystack
+		 * 	 	 	 	*/
+		char *h, *n;
 
-	for (i = 0; haystack[i]; i++)
-	{
-		for (k = i, j = 0; needle[j]; j++, k++)
-		{
-		}
-	}
+			while (*haystack != '\0')
+					{
+								h = haystack;
+										n = needle;
+												while (*n != '\0' && *haystack == *n)
+															{
+																			haystack++;
+																						n++;
+																								}
+														if (!*n)
+																		return (h);
+																haystack++;
+																	}
+				return ('\0');
 }
+
 6-abs.c/        0           0     0     644     223       `
 #include "main.h"
 
@@ -423,4 +438,12 @@ _putchar.c/     0           0     0     644     244       `
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
+}
+main.c/         0           0     0     644     150       `
+#include "main.h"
+
+int main(void)
+{
+	    _puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
+	    return (0);
 }
