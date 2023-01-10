@@ -22,9 +22,14 @@ int main(int argc, char **argv)
 		j = atoi(argv[1]);
 		if (j < 0)
 			printf("0\n");
-		if (j >= 10 && j < 100)
+		if (j == 10)
 		{
 			cents = j / 10;
+			printf("%d\n", cents);
+		}
+		if (j > 10 && j < 100)
+		{
+			cents = j % 10;
 			printf("%d\n", cents);
 		}
 		if (j == 100)
