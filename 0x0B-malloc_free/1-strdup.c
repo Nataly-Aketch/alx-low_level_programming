@@ -11,19 +11,30 @@
  */
 char *_strdup(char *str)
 {
-	int n = strlen(str) + 1;
 	char *ptr;
-	static char *dup;
+	int n = strlen(str);
 
-	dup = malloc(n * sizeof(char));
-	if (dup == NULL)
-		return ((NULL);
-	ptr = dup;
-	while (*str)
+	ptr = malloc((n + 1) * sizeof(char));
+	while (*ptr)
 	{
+		if (ptr == NULL)
+			return (0);
 		*ptr = *str;
 		ptr++;
-		str++;
 	}
-	return (dup);
+	return (str);
+}
+int main(void)
+{
+	    char *s;
+
+	        s = _strdup("ALX SE");
+		    if (s == NULL)
+			        {
+					        printf("failed to allocate memory\n");
+						        return (1);
+							    }
+		        printf("%s\n", s);
+			    free(s);
+			        return (0);
 }
