@@ -24,7 +24,6 @@ int main(int argc, char **argv)
 	(argc == 1))
 	{
 		printf("%d\n", sum);
-		break;
 	}
 	else
 		printf("Error\n");
