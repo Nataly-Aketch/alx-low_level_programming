@@ -19,6 +19,8 @@ char *_strdup(char *str)
 		return (0);
 	while (i < n)
 	{
+		if (ptr == NULL)
+			return (0);
 		ptr[i] = str[i];
 		i++;
 	}
