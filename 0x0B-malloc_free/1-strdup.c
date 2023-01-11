@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
+#include <string.h>
 
 /**
  * _strdup - copies a string given as parameter
@@ -10,17 +11,33 @@
  */
 char *_strdup(char *str)
 {
+	int n = strlen(str) + 1;
 	char *ptr;
-	int n = sizeof(ptr);
+	static char *dup;
 
-	ptr = malloc(n * sizeof(char));
-	if (ptr == NULL)
+	dup = malloc(n * sizeof(char));
+	if (dup == NULL)
 		return (0);
-	while (*ptr)
+	ptr = dup;
+	while (*str)
 	{
 		*ptr = *str;
 		ptr++;
+		str++;
 	}
+	return (dup);
+}
+int main(void)
+{
+	    char *s;
 
-	return (str);
+	        s = _strdup("ALX SE");
+		    if (s == NULL)
+			        {
+					        printf("failed to allocate memory\n");
+						        return (1);
+							    }
+		        printf("%s\n", s);
+			    free(s);
+			        return (0);
 }
