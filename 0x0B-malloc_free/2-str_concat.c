@@ -8,20 +8,25 @@
  * @s2: soyrce string
  * Return: destination string or NULL on failure
  */
-char *str_concat(char *s1, char *s2);
-int main()
+char *str_concat(char *s1, char *s2)
 {
-	char *dest, *src;
-	dest = "Love";
-	src = " Bruno";
-	while (*dest == '\0')
+	int len1, len2, n;
+	char *temp;
+
+	len1 = strlen(s1);
+	len2 = strlen(s2);
+	n = len1 + len2 + 1;
+	temp = malloc((n) * sizeof(char));
+	if (temp == NULL)
+		return (0);
+	while (s1[len1])
 	{
-		while (*src)
-		{
-		*dest = *src;
-		*src++;
-		}
-		*dest++;
+		temp[len1] = s1[len1];
 	}
-	printf("%s", dest);
+	while (s2[len2])
+	{
+		temp[len1] = s2[len2++];
+	}
+	temp[len1 + len2] = '\0';
+	return (temp);
 }
