@@ -10,22 +10,20 @@
  */
 int main(int argc, char **argv)
 {
-	int i = 1, sum = 0;
+	int i = 1, sum = 0, j;
 
 	for (; i < argc; i++)
 	{
+		for (j = 0; argv[i][j]; j++)
+		{
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
 		sum += atoi(argv[i]);
 	}
-	if ((strcmp(argv[argc - 1], "1") == 0) || (strcmp(argv[argc - 1], "2") == 0)
-	|| (strcmp(argv[argc - 1], "3") == 0) || (strcmp(argv[argc - 1], "4") == 0) ||
-	(strcmp(argv[argc - 1], "5") == 0) || (strcmp(argv[argc - 1], "6") == 0) ||
-	(strcmp(argv[argc - 1], "7") == 0) || (strcmp(argv[argc - 1], "8") == 0) ||
-	(strcmp(argv[argc - 1], "9") == 0) || (strcmp(argv[argc - 1], "0") == 0) ||
-	(argc == 1))
-	{
-		printf("%d\n", sum);
-	}
-	else
-		printf("Error\n");
+	printf("%d\n", sum);
 	return (0);
 }
