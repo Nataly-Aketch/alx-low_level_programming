@@ -2,6 +2,25 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
+/**
+ * _strcat - concatenates strings
+ * @dest: destination string
+ * @src: source string
+ * Return: destination string
+ */
+char *_strcat(char *dest, char *src)
+{
+	int i, j;
+
+	for (i = 0; dest[i]; i++)
+	{
+	}
+	for (j = 0; src[j]; j++, i++)
+		dest[i] = src[j];
+	dest[i] = '\0';
+	return (dest);
+}
 /**
  * argstostr - concatenates all CLI argument
  * @ac: argument count
@@ -23,9 +42,8 @@ char *argstostr(int ac, char **av)
 		return (0);
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j]; j++)
-			temp[j] =  av[i][j];
-		temp[j] = '\n';
+		_strcat(temp, av[i]);
+		_strcat(temp, "\n");
 	}
 	return (temp);
 }
