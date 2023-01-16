@@ -39,7 +39,7 @@ char *argstostr(int ac, char **av)
 		for (j = 0; av[i][j]; j++)
 			total++;
 	}
-	temp = malloc(total * sizeof(char));
+	temp = malloc(total + 1 * sizeof(char));
 	if (temp == NULL)
 		return (0);
 	for (i = 0; i < ac; i++)
