@@ -29,12 +29,17 @@ char *_strcat(char *dest, char *src)
  */
 char *argstostr(int ac, char **av)
 {
-	char *temp, **argv = av;
-	int i, total;
+	char *temp;
+	int i, j, total;
 
 	if (ac == 0 || av == NULL)
 		return (0);
-	total = strlen(*argv);
+	for (i = 0; av[i]; i++)
+	{
+		for (j = 0; av[i][j]; j++)
+			total++;
+		total++;
+	}
 	temp = malloc(total * sizeof(char));
 	if (temp == NULL)
 		return (0);
