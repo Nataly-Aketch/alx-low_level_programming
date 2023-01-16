@@ -30,7 +30,7 @@ char *_strcat(char *dest, char *src)
 char *argstostr(int ac, char **av)
 {
 	char *temp;
-	int i, j, len = 0;
+	int i, j, len;
 
 	if (ac == 0 || av == NULL)
 		return (0);
