@@ -30,7 +30,7 @@ char *_strcat(char *dest, char *src)
 char *argstostr(int ac, char **av)
 {
 	char *temp;
-	int i, j, total;
+	int i, j, total = ac;
 
 	if (ac == 0 || av == NULL)
 		return (0);
@@ -38,7 +38,6 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; av[i][j]; j++)
 			total++;
-		total++;
 	}
 	temp = malloc(total * sizeof(char));
 	if (temp == NULL)
