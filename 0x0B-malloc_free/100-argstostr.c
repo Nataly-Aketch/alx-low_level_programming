@@ -34,9 +34,9 @@ char *argstostr(int ac, char **av)
 
 	if (ac == 0 || av == NULL)
 		return (0);
-	for (i = 1; i < ac; i++)
+	for (i = 1; i < av[i]; i++)
 		for (j = 0; av[i][j]; j++)
-			len += av[i][j];
+			len++;
 	temp = malloc(len * sizeof(char));
 	if (temp == NULL)
 		return (0);
