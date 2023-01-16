@@ -10,7 +10,7 @@
  */
 char **strtow(char *str)
 {
-	int i, j, col, row, total;
+	int i, col, row, total;
 	char **temp;
 
 	if (str == NULL || strcmp(str, "") == 0)
