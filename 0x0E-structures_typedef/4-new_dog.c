@@ -3,6 +3,24 @@
 #include <stdlib.h>
 #include <string.h>
 /**
+ * dup - duplicates string
+ * @str: string to be duplicated
+ * Return: duplicated string or null on failure
+ */
+char *dup(char *str)
+{
+	int i;
+	char *ptr;
+
+	ptr = malloc((strlen(str) + 1) * sizeof(char));
+	if (ptr == NULL)
+		return (ptr);
+	for (i = 0; str[i]; i++)
+		ptr[i] = str[i];
+	free(ptr);
+	return (ptr);
+}
+/**
  * new_dog - creates new dog
  * @name: dog name
  * @age: dog age
@@ -12,35 +30,15 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *doggy;
-	char *alias, *own;
-	unsigned int i, j;
 
-	doggy = malloc(sizeof(dog_t));
+	doggy = malloc(sizeof(*doggy));
 	if (doggy == NULL || !name || !owner)
 	{
 		return (0);
 	}
-	alias = malloc(sizeof(char) * (strlen(name) + 1));
-	if (alias == NULL)
-	{
-		return (0);
-	}
-	for (i = 0; name[i]; i++)
-		alias[i] = name[i];
-	own = malloc(sizeof(char) * (strlen(owner) + 1));
-	if (own == NULL)
-	{
-		return (0);
-	}
-	for (j = 0; owner[j]; j++)
-	{
-		own[j] = owner[j];
-	}
-	doggy->name = name;
+	doggy->name = dup(name);
 	doggy->age = age;
-	doggy->owner = owner;
+	doggy->owner = dup(owner);
 	free(doggy);
-	free(alias);
-	free(own);
 	return (doggy);
 }
