@@ -17,7 +17,6 @@ char *dup(char *str)
 		return (ptr);
 	for (i = 0; str[i]; i++)
 		ptr[i] = str[i];
-	free(ptr);
 	return (ptr);
 }
 /**
