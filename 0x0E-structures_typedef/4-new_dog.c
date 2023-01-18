@@ -14,15 +14,22 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *doggy;
 
-	doggy = malloc(sizeof(*doggy));
+	doggy = malloc(sizeof(dog_t));
 	if (doggy == NULL)
+		return (0);
+	doggy->name = malloc(sizeof(char) * (strlen(name) + 1));
+	if (doggy->name == NULL)
 	{
 		return (0);
 	}
-	doggy->name = malloc(sizeof(char) * (strlen(name) + 1));
 	strcpy(doggy->name, name);
 	doggy->age = age;
 	doggy->owner = malloc(sizeof(char) * (strlen(owner) + 1));
+	if (doggy->owner == NULL)
+	{
+		return (0);
+	}
 	strcpy(doggy->owner, owner);
+	free(doggy);
 	return (doggy);
 }
