@@ -10,7 +10,7 @@ void f(char *str)
 	int i;
 
 	for (i = 0; str[i]; i++)
-		printf("%c\n", str[i]);
+		printf("%c", str[i]);
 }
 /**
  * print_name - prints name
