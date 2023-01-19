@@ -11,9 +11,7 @@
 int main(int argc, char **argv)
 {
 	int i, j, result;
-	char *arr;
 
-	arr = "+-*/%";
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -33,7 +31,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(100);
 	}
-	result = (*get_op_func(arr))(i, j);
+	result = (*get_op_func(argv[2]))(i, j);
 	printf("%d\n", result);
 	return (0);
 }
