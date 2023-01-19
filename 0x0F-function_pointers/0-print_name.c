@@ -1,17 +1,7 @@
 #include "function_pointers.h"
 #include <stdlib.h>
 #include <stdio.h>
-/**
- * f - prints name
- * @str: name to be printed
- */
-void f(char *str)
-{
-	int i;
 
-	for (i = 0; str[i]; i++)
-		printf("%c", str[i]);
-}
 /**
  * print_name - prints name
  * @name: name to be printed
@@ -19,5 +9,6 @@ void f(char *str)
  */
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	if (f && name)
+		f(name);
 }
