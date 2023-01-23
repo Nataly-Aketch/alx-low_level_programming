@@ -8,41 +8,40 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	int integer;
-	int j;
-	int len = strlen(format);
-	char character;
-	float decimal;
+	int j = 0, len = strlen(format);
 	char *string;
 
 	va_start(ap, format);
-	j = 0;
 	while (j < len)
 	{
-		if (j != '\0')
+		switch (format[j])
+		{
+			case ('i'):
+			{
+				printf("%d", va_arg(ap, int));
+				break;
+			}
+			case ('c'):
+			{
+				printf("%c", va_arg(ap, int));
+				break;
+			}
+			case ('f'):
+			{
+				printf("%f", va_arg(ap, double));
+				break;
+			}
+			case ('s'):
+			{
+				if (!string)
+					printf("(nil)");
+				string = va_arg(ap, char *);
+				printf("%s", string);
+			}
+		}
+		if (j != len - 1)
 			printf(", ");
-		if (format[j] == 'i')
-		{
-			integer = va_arg(ap, int);
-			printf("%d", integer);
-		}
-		else if (format[j] == 'c')
-		{
-			character = (char)va_arg(ap, int);
-			printf("%c", character);
-		}
-		if (format[j] == 'f')
-		{
-			decimal = va_arg(ap, double);
-			printf("%f", decimal);
-		}
-		else if (format[j] == 's')
-		{
-			string = va_arg(ap, char *);
-			printf("%s", string);
-		}
 		j++;
 	}
 	printf("\n");
-	va_end(ap);
 }
