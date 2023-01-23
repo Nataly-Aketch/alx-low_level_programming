@@ -12,9 +12,9 @@ void print_all(const char * const format, ...)
 	char *string;
 
 	va_start(ap, format);
-	while (j < len && format[j])
+	while (j < len)
 	{
-		if (j < len && j > 0 && (format[j] == 'c' || format[j] == 'i'
+		if (j < len && j > 0 && format[j] && (format[j] == 'c' || format[j] == 'i'
 		|| format[j] == 's' || format[j] == 'f'))
 			printf(", ");
 		switch (format[j])
