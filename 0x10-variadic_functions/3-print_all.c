@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 	char *string;
 
 	va_start(ap, format);
-	while (format[j])
+	while (format[j] && format)
 	{
 		if (j < len && j > 0 && (format[j] == 'c' || format[j] == 'i'
 		|| format[j] == 's' || format[j] == 'f'))
