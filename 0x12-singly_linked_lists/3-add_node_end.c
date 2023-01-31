@@ -36,7 +36,9 @@ list_t *add_node_end(list_t **head, const char *str)
 	{
 		last = *head;
 		while (last->next)
+			/*moves the last pointer to point to the next node and not NULL*/
 			last = last->next;
+		/*the last pointer now points to the new appended node*/
 		last->next = new_node;
 	}
 	return (new_node);
