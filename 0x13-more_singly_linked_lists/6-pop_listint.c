@@ -24,8 +24,15 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 int pop_listint(listint_t **head)
 {
 	listint_t *temp;
+	int item;
 
+	if (!*head)
+		return (0);
+	/*search for head node at index position 0 to pop*/
 	temp = get_nodeint_at_index(*head, 0);
+	/*the new head now points to whatever temp(intial head) was pointing to*/
 	*head = temp->next;
-	return (temp->n);
+	item = temp->n;
+	free(temp);
+	return (item);
 }
