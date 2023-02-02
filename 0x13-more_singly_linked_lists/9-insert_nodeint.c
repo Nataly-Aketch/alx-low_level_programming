@@ -4,6 +4,7 @@
  * @head: head node
  * @idx: index position
  * @n: new data
+ * Return: new node
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
@@ -17,10 +18,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (!*head)
 		*head = new;
 	temp = *head;
-	while (temp->next && count < idx)
+	while (count < idx)
 	{
+		if (temp->next)
+			temp = temp->next;
 		count++;
-		temp = temp->next;
 	}
 	new->next = temp->next;
 	temp->next = new;
