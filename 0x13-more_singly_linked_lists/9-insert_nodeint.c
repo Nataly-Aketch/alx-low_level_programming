@@ -1,5 +1,22 @@
 #include "lists.h"
 /**
+ * get_nodeint_at_index - searches a list
+ * @head: head node
+ * @index: node index
+ * Return: index of the node or NULL
+ */
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+{
+	unsigned int count = 0;
+
+	while (head && count < index)
+	{
+		head = head->next;
+		count++;
+	}
+	return (head);
+}
+/**
  * insert_nodeint_at_index - inserts node at a specific point
  * @head: head node
  * @idx: index position
@@ -8,8 +25,7 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *new, *temp;
-	unsigned int count;
+	listint_t *new, *prev;
 
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
@@ -20,16 +36,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		new->next = *head;
 		*head = new;
 	}
-	temp = *head;
-	count = 1;
-	while (count < idx)
-	{
-		if (temp->next)
-			temp = temp->next;
-		count++;
-	}
-	new->next = temp->next;
-	temp->next = new;
+	prev = get_nodeint_at_index(*head, idx - 1);
+	new->next = prev->next;
+	prev->next = new;
 	return (new);
-
 }
