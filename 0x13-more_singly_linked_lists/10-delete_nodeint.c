@@ -37,6 +37,8 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		prev = get_nodeint_at_index(*head, index - 1);
 		popit = get_nodeint_at_index(*head, index);
+		if (!prev || !popit)
+			return (-1);
 		prev->next = popit->next;
 		free(popit);
 		return (1);
