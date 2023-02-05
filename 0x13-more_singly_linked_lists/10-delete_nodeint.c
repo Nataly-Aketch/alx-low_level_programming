@@ -33,7 +33,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(popit);
 		return (1);
 	}
-	else if (*head && index != 0)
+	else
 	{
 		prev = get_nodeint_at_index(*head, index - 1);
 		popit = get_nodeint_at_index(*head, index);
