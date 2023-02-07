@@ -6,9 +6,10 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int j = strlen(b), decinum = 0, mul = 1;
+	int j = strlen(b), mul = 1;
+	unsigned int decinum = 0;
 
-	if (b == NULL)
+	if (!b)
 		return (0);
 	while (j--)
 	{
