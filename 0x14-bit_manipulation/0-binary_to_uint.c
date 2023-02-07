@@ -16,7 +16,7 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[j] != '1' && b[j] != '0')
 			return (0);
-		decinum = decinum * 2 + (b[j++] - '0');
+		decinum = (decinum << 1) + (b[j++] - '0');
 	}
 	return (decinum);
 }
