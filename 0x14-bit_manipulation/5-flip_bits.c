@@ -7,9 +7,9 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int count = 0, i = n ^ m;
+	unsigned int count = 0, i = n ^ m;
 
-	while (i)
+	while (i > 0)
 	{
 		if (i & 1)
 			count++;
