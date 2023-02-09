@@ -14,7 +14,7 @@ void readErr(char *from)
  */
 void writeErr(char *to)
 {
-	dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", to);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to);
 	exit(99);
 }
 /**
@@ -39,13 +39,13 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "%s", "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	from = open(argv[1], O_RDONLY);
 	if (from == -1)
 		readErr(argv[1]);
-	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (to == -1)
 		writeErr(argv[2]);
 	while (1)
@@ -56,7 +56,8 @@ int main(int argc, char **argv)
 		wr2 = write(to, buff, rd);
 		if (wr2 == -1)
 			writeErr(argv[2]);
-		break;
+		else
+			break;
 	}
 	cl = close(from);
 	if (cl == -1)
