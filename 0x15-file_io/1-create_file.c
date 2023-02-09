@@ -7,7 +7,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int op, pt, len = strlen(text_content);
+	int op, pt;
 
 	if (filename == NULL)
 		return (-1);
@@ -16,12 +16,11 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	if (text_content)
-	{
-		pt = write(op, text_content, len);
-		if (pt == -1)
-			return (-1);
-	}
+	if (!text_content)
+		return (1);
+	pt = write(op, text_content, strlen(text_content));
+	if (pt == -1)
+		return (-1);
 	close(op);
 	return (1);
 }
