@@ -63,6 +63,6 @@ int main(int argc, char **argv)
 		closeErr(cl1);
 	cl2 = close(to);
 	if (cl2 == -1)
-		closeErr(cl1);
+		closeErr(cl2);
 	return (0);
 }
