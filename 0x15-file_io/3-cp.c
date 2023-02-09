@@ -48,16 +48,13 @@ int main(int argc, char **argv)
 	to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (to == -1)
 		writeErr(argv[2]);
-	while (1)
+	while ((rd = read(from, buff, 1024)))
 	{
-		rd = read(from, buff, 1024);
-		if (rd < 0)
+		if (rd == -1)
 			readErr(argv[1]);
 		wr2 = write(to, buff, rd);
-		if (wr2 == -1)
+		if (wr2 == -1 || wr2 != rd)
 			writeErr(argv[2]);
-		else
-			break;
 	}
 	cl = close(from);
 	if (cl == -1)
