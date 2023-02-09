@@ -60,9 +60,9 @@ int main(int argc, char **argv)
 	}
 	cl = close(from);
 	if (cl == -1)
-		closeErr(cl);
+		closeErr(from);
 	cl = close(to);
 	if (cl == -1)
-		closeErr(cl);
+		closeErr(to);
 	return (0);
 }
