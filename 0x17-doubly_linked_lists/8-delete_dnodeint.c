@@ -26,21 +26,23 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *prev1, *after;
+	dlistint_t *prev1, *popit;
 
-	if (index == 0)
+	if (index == 0 && *head)
 	{
-		after = get_dnodeint_at_index(*head, 1);
-		after->prev = NULL;
-		after->next->prev = after;
-		*head = after;
+		popit = *head;
+		if (popit == NULL)
+			return (-1);
+		*head = popit->next;
+		free(popit);
 		return (1);
 	}
 	prev1 = get_dnodeint_at_index(*head, index - 1);
-	after = get_dnodeint_at_index(*head, index + 1);
-	if (!prev1 && !after)
-		return (0);
-	prev1->next = after;
-	after->prev = prev1;
+	popit = get_dnodeint_at_index(*head, index);
+	if (!prev1 || !popit)
+		return (-1);
+	prev1->next = popit->next;
+	popit->next->prev = prev1;
+	free(popit);
 	return (1);
 }
