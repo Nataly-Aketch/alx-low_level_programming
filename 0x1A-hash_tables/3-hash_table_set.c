@@ -17,6 +17,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash = key_index((unsigned char *)key, ht->size);
 	head = ht->array[hash];
 	new_node->value = strdup(value);
+	if (!value)
+	{
+		free(new_node);
+		return (0);
+	}
+	new_node->key = strdup(key);
+	if (!key)
+	{
+		free(new_node->value);
+		free(new_node);
+		return (0);
+	}
 	new_node->next = NULL;
 	if (!head)
 	{
